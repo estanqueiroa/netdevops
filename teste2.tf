@@ -24,7 +24,7 @@ resource "aws_iam_role_policy_attachment" "attach_s3_read_only" {
 
 # (Optional) Create an instance profile for EC2
 resource "aws_iam_instance_profile" "my_ec2_profile" {
-  name = "my-ec2-instance-profile"
+  name = "ec2-instance-profile-22"
   role = aws_iam_role.my_ec2_role.name
 }
 
