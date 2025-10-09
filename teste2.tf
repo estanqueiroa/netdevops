@@ -1,6 +1,6 @@
 # Define the IAM role
 resource "aws_iam_role" "my_ec2_role" {
-  name               = "my-ec2-role"
+  name               = "my-ec2-role22"
   assume_role_policy = jsonencode({
     Version   = "2012-10-17",
     Statement = [
