@@ -17,8 +17,10 @@ terraform {
     bucket         = "{{ bucket }}"
     key            = "{{ key }}"
     region         = "{{ region }}"
+    kms_key_id     = "{{ kms_key_id }}"
     use_lockfile = true
   }
 }
+
 
 
