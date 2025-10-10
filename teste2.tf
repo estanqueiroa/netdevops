@@ -1,7 +1,3 @@
-# Main provider configuration
-provider "aws" {
-  region = "sa-east-1"
-}
 
 # Additional provider configuration for us-east-1
 provider "aws" {
@@ -45,21 +41,15 @@ output "iam_role_arn" {
   value = aws_iam_role.my_ec2_role.arn
 }
 
+#############
 
-# Define the IAM role for US region
-resource "aws_iam_role" "my_ec2_role_usregion" "east" {
-  name               = "my-ec2-role33-usregion"
-  assume_role_policy = jsonencode({
-    Version   = "2012-10-17",
-    Statement = [
-      {
-        Action    = "sts:AssumeRole",
-        Effect    = "Allow",
-        Principal = {
-          Service = "ec2.amazonaws.com"
-        }
-      }
-    ]
-  })
-  description = "IAM role for EC2 instances"
+# create VPC in second region US-EAST-1
+resource "aws_vpc" "main" "east" {
+  cidr_block           = "10.0.0.0/16"
+  enable_dns_hostnames = true
+  enable_dns_support   = true
+
+  tags = {
+    Name = "main-vpc-2nd-region"
+  }
 }
