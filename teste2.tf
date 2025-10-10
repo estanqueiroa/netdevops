@@ -44,7 +44,8 @@ output "iam_role_arn" {
 #############
 
 # create VPC in second region US-EAST-1
-resource "aws_vpc" "main" "east" {
+resource "aws_vpc" "main" {
+  provider             = aws.east
   cidr_block           = "10.0.0.0/16"
   enable_dns_hostnames = true
   enable_dns_support   = true
