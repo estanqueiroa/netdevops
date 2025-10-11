@@ -3,6 +3,9 @@
 provider "aws" {
   alias  = "east"
   region = "us-east-1"
+  assume_role {
+    role_arn     = "arn:aws:iam::024160893228:role/admin-netdevops-pipeline"
+  }
 }
 
 #################
