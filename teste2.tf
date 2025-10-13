@@ -54,7 +54,7 @@ resource "aws_vpc" "east" {
   enable_dns_support   = true
 
   tags = {
-    Name = "aft-vpc-2nd-region"
+    Name = "aft-vpc-2nd-region-33"
   }
 }
 
@@ -66,6 +66,6 @@ resource "aws_vpc" "saopaulo" {
   enable_dns_support   = true
 
   tags = {
-    Name = "aft-vpc-main-region-sp"
+    Name = "aft-vpc-main-region-sp-33"
   }
 }
