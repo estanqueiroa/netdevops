@@ -54,7 +54,7 @@ resource "aws_vpc" "east" {
   enable_dns_support   = true
 
   tags = {
-    Name = "aft-vpc-2nd-region-33"
+    Name = "aft-vpc-2nd-region-55"
   }
 }
 
@@ -66,30 +66,7 @@ resource "aws_vpc" "saopaulo" {
   enable_dns_support   = true
 
   tags = {
-    Name = "aft-vpc-main-region-sp-33"
+    Name = "aft-vpc-main-region-sp-55"
   }
 }
 
-# create VPC in second region US-EAST-1
-resource "aws_vpc" "east2" {
-  provider             = aws.east
-  cidr_block           = "10.0.0.0/16"
-  enable_dns_hostnames = true
-  enable_dns_support   = true
-
-  tags = {
-    Name = "aft-vpc-2nd-region-22"
-  }
-}
-
-# create VPC in main region SP
-resource "aws_vpc" "saopaulo2" {
-  #provider             = aws.east
-  cidr_block           = "10.0.0.0/16"
-  enable_dns_hostnames = true
-  enable_dns_support   = true
-
-  tags = {
-    Name = "aft-vpc-main-region-sp-22"
-  }
-}
