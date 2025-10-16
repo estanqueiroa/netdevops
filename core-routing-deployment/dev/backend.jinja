@@ -4,7 +4,7 @@
 provider "aws" {
   region = "{{ region }}"
   assume_role {
-    role_arn     = "{{ assume_role_arn }}"
+    role_arn     = "arn:aws:iam::{{ account_id }}:role/{{ target_role_name }}"
   }
 }
 
@@ -25,6 +25,7 @@ terraform {
     encrypt = true
   }
 }
+
 
 
 
