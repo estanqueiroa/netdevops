@@ -4,14 +4,14 @@
 #  alias  = "east"
 #  region = "us-east-1"
 #  assume_role {
-#    role_arn     = "arn:aws:iam::024160893228:role/admin-netdevops-pipeline"
+#    role_arn     = "arn:aws:iam::024160893228:role/network-deployment-role"
 #  }
 #}
 
 #################
 # Define the IAM role for main region
 resource "aws_iam_role" "my_ec2_role" {
-  name               = "my-ec2-role33"
+  name               = "my-ec2-role-new01"
   assume_role_policy = jsonencode({
     Version   = "2012-10-17",
     Statement = [
@@ -35,7 +35,7 @@ resource "aws_iam_role_policy_attachment" "attach_s3_read_only" {
 
 # (Optional) Create an instance profile for EC2
 resource "aws_iam_instance_profile" "my_ec2_profile" {
-  name = "ec2-instance-profile-33"
+  name = "ec2-instance-profile-new01"
   role = aws_iam_role.my_ec2_role.name
 }
 
@@ -66,7 +66,7 @@ resource "aws_vpc" "saopaulo" {
   enable_dns_support   = true
 
   tags = {
-    Name = "aft-vpc-main-region-sp-55"
+    Name = "aft-vpc-main-region-sp-55-new01"
   }
 }
 
