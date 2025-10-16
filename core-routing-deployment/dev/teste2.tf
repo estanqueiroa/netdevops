@@ -11,7 +11,7 @@
 #################
 # Define the IAM role for main region
 resource "aws_iam_role" "my_ec2_role" {
-  name               = "my-ec2-role-new01"
+  name               = "my-ec2-role-new011"
   assume_role_policy = jsonencode({
     Version   = "2012-10-17",
     Statement = [
@@ -35,7 +35,7 @@ resource "aws_iam_role_policy_attachment" "attach_s3_read_only" {
 
 # (Optional) Create an instance profile for EC2
 resource "aws_iam_instance_profile" "my_ec2_profile" {
-  name = "ec2-instance-profile-new01"
+  name = "ec2-instance-profile-new011"
   role = aws_iam_role.my_ec2_role.name
 }
 
@@ -66,7 +66,7 @@ resource "aws_vpc" "saopaulo" {
   enable_dns_support   = true
 
   tags = {
-    Name = "aft-vpc-main-region-sp-55-new01"
+    Name = "aft-vpc-main-region-sp-55-new011"
   }
 }
 
