@@ -1,12 +1,12 @@
 
 # Additional provider configuration for us-east-1
-provider "aws" {
-  alias  = "east"
-  region = "us-east-1"
-  assume_role {
-    role_arn     = "arn:aws:iam::024160893228:role/admin-netdevops-pipeline"
-  }
-}
+# provider "aws" {
+#  alias  = "east"
+#  region = "us-east-1"
+#  assume_role {
+#    role_arn     = "arn:aws:iam::024160893228:role/admin-netdevops-pipeline"
+#  }
+#}
 
 #################
 # Define the IAM role for main region
@@ -47,16 +47,16 @@ output "iam_role_arn" {
 #############
 
 # create VPC in second region US-EAST-1
-resource "aws_vpc" "east" {
-  provider             = aws.east
-  cidr_block           = "10.0.0.0/16"
-  enable_dns_hostnames = true
-  enable_dns_support   = true
+#resource "aws_vpc" "east" {
+#  provider             = aws.east
+#  cidr_block           = "10.0.0.0/16"
+#  enable_dns_hostnames = true
+#  enable_dns_support   = true
 
-  tags = {
-    Name = "aft-vpc-2nd-region-55"
-  }
-}
+#  tags = {
+#    Name = "aft-vpc-2nd-region-55"
+#  }
+#}
 
 # create VPC in main region SP
 resource "aws_vpc" "saopaulo" {
